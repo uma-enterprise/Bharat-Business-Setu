@@ -121,6 +121,15 @@ header {
     display: none;
 }
 
+.mobile-nav-toggle {
+    background: transparent;
+    border: none;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 2000;
+}
+
 .logo {
   font-size: 1.5rem;
   font-weight: 700;
