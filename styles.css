@@ -113,6 +113,18 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 15px 0;
+  position: relative;
+  width: 100%;
+}
+
+.mobile-nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 2000;
 }
 
 .logo {
@@ -410,6 +422,7 @@ header {
   display: flex;
   justify-content: center;
   gap: 30px;
+  flex-wrap: wrap; /* Ensure badges wrap on small screens */
 }
 
 .badge {
@@ -560,7 +573,114 @@ footer {
 .mb-2 { margin-bottom: 2rem; }
 
 @media (max-width: 768px) {
-  .hero h1 { font-size: 2rem; }
-  .nav-container { flex-direction: column; gap: 15px; }
-  .main-nav ul { flex-wrap: wrap; justify-content: center; }
+  .hero h1 { font-size: 2.2rem; }
+  .hero p { font-size: 1rem; }
+  
+  .hero .btn {
+      display: block;
+      margin: 10px auto !important;
+      width: 100%;
+      max-width: 300px;
+  }
+
+  .nav-container { 
+    padding: 10px 20px; 
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .logo {
+      font-size: 1.2rem;
+      gap: 5px;
+  }
+
+  .logo i {
+      font-size: 1.5rem !important;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 85%;
+    height: 100vh;
+    background: var(--white);
+    padding: 80px 30px 40px;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+    z-index: 1500;
+    overflow-y: auto; /* Make it scrollable */
+  }
+
+  .main-nav.active {
+    right: 0;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .main-nav > ul > li {
+      padding: 0;
+  }
+
+  .main-nav a {
+    font-size: 1.1rem;
+    display: block;
+    width: 100%;
+  }
+
+  .mega-box {
+    position: static;
+    transform: none;
+    min-width: 100%;
+    max-width: 100%;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+    box-shadow: none;
+    border: none;
+    padding: 10px 0 10px 15px;
+  }
+
+  .mega-col ul li a {
+      white-space: normal; /* Allow text to wrap in submenus */
+      padding: 10px !important;
+  }
+
+  .main-nav > ul > li:hover .mega-box {
+      display: none; /* Disable hover toggle on mobile */
+  }
+
+  .mega-content, .mega-content-4col {
+      grid-template-columns: 1fr;
+      gap: 15px;
+  }
+
+  #main-header .btn-primary {
+      display: none !important; /* Force hide callback button on mobile header */
+  }
+
+  .mobile-only-btn {
+      display: block !important;
+      margin-top: 30px;
+      width: 100%;
+      text-align: center;
+  }
+
+  .main-nav .btn-primary:not(.mobile-only-btn) {
+      display: none; /* Hide any other buttons in nav on mobile if they accidentally exist */
+  }
+
+  .top-bar-content {
+      flex-direction: column;
+      gap: 5px;
+      text-align: center;
+  }
 }
