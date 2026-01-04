@@ -117,14 +117,8 @@ header {
   width: 100%;
 }
 
-.mobile-nav-toggle {
+.mobile-nav-toggle, .mobile-only-btn {
     display: none;
-    background: transparent;
-    border: none;
-    color: var(--primary-color);
-    font-size: 1.5rem;
-    cursor: pointer;
-    z-index: 2000;
 }
 
 .logo {
