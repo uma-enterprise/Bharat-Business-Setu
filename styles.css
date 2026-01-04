@@ -394,7 +394,8 @@ header {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(rgba(10, 37, 64, 0.85), rgba(10, 37, 64, 0.7)), url('../assets/images/legal_hero.png');
+  background: linear-gradient(135deg, var(--primary-color) 0%, #1a3a5c 100%), url('images/legal_hero.png');
+  background-blend-mode: overlay;
   background-size: cover;
   background-position: center;
   padding: 100px 0;
