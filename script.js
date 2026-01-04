@@ -1,17 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Dynamic Year
-    document.getElementById('year').textContent = new Date().getFullYear();
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
 
     // Sticky Header Shadow
     const header = document.getElementById('main-header');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.style.boxShadow = '0 4px 10px rgba(0,0,0,0.1)';
-        } else {
-            header.style.boxShadow = '0 2px 5px rgba(0,0,0,0.05)';
-        }
-    });
+    if (header) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 4px 10px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 5px rgba(0,0,0,0.05)';
+            }
+        });
+    }
 
+    const navContainer = document.querySelector('.nav-container');
+    const mainNav = document.querySelector('.main-nav');
+    
     if (navContainer && mainNav) {
         // Only create toggle if it doesn't exist
         let navToggle = document.querySelector('.mobile-nav-toggle');
@@ -24,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         // Clone Request Callback button for mobile menu ONLY if it doesn't exist there
-        // and ONLY if we are on a mobile-sized screen to avoid desktop clutter
         const headerBtn = document.querySelector('header .btn-primary');
         if (headerBtn && !mainNav.querySelector('.mobile-only-btn')) {
             const mobileBtn = headerBtn.cloneNode(true);
@@ -70,26 +75,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.querySelectorAll('.mega-box').forEach(box => box.style.display = 'none');
             }
         });
-    }
 
-    // Smooth Scroll for Anchor Links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                // Close mobile menu if open
-                if (mainNav && mainNav.classList.contains('active')) {
-                    mainNav.classList.remove('active');
-                    navToggle.querySelector('i').className = 'fas fa-bars';
+        // Smooth Scroll for Anchor Links (integrated to handle closing menu)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') {
+                    e.preventDefault();
+                    return;
                 }
                 
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    // Close mobile menu if open
+                    if (mainNav.classList.contains('active')) {
+                        mainNav.classList.remove('active');
+                        navToggle.querySelector('i').className = 'fas fa-bars';
+                    }
+                    
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
         });
-    });
+    }
 });
