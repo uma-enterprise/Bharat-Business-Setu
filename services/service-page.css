@@ -707,7 +707,8 @@
     border-radius: 8px;
 }
 
-.pricing-badge {
+.pricing-badge,
+.popular-badge {
     position: absolute;
     top: 0;
     left: 50%;
