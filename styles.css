@@ -95,6 +95,10 @@ header {
   z-index: 1000;
 }
 
+#main-header .btn-primary {
+    flex-shrink: 0;
+}
+
 .top-bar {
   background-color: var(--primary-color);
   color: var(--white);
@@ -112,6 +116,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap; /* Allow wrapping for search bar on mobile */
   padding: 15px 0;
   position: relative;
   width: 100%;
@@ -137,17 +142,19 @@ header {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-shrink: 0; /* Prevent logo from shrinking */
 }
 
 .main-nav ul {
   display: flex;
-  gap: 25px;
+  gap: 15px; /* Reduced from 25px */
 }
 
 .main-nav a {
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.9rem; /* Slightly reduced from 0.95rem */
   color: var(--primary-color);
+  white-space: nowrap; /* Prevent wrapping of multi-word links */
 }
 
 /* Mega Menu */
@@ -687,3 +694,121 @@ footer {
       text-align: center;
   }
 }
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    color: #fff !important;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    animation: pulse-whatsapp 2s infinite;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: #128c7e;
+}
+
+@keyframes pulse-whatsapp {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+    70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* Header Search Bar */
+.search-container {
+    position: relative;
+    margin-left: 20px; /* Changed from margin-right */
+}
+
+.search-input {
+    padding: 10px 40px 10px 20px; /* increased padding */
+    border-radius: 25px; /* more rounded */
+    border: 1px solid #ddd;
+    font-size: 0.9rem;
+    width: 200px; /* increased back to 200px as there is more room now */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #f1f3f5;
+}
+
+.search-input:focus {
+    width: 280px; /* wider on focus */
+    outline: none;
+    border-color: var(--secondary-color);
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.search-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+    pointer-events: none;
+}
+
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    margin-top: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1001;
+    display: none;
+}
+
+.search-result-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s;
+    font-size: 0.85rem;
+    color: var(--text-dark);
+    display: block;
+    text-decoration: none;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-item:hover {
+    background: #f0f7ff;
+}
+
+@media (max-width: 992px) {
+    .search-container {
+        display: none; /* Keep hidden on small tablets for now to avoid crowding */
+    }
+}
+
+@media (max-width: 768px) {
+    .search-container {
+        display: block;
+        margin: 15px auto;
+        width: 90%;
+        text-align: center;
+    }
+    .search-input {
+        width: 100% !important;
+    }
+}
+
