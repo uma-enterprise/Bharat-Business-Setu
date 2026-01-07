@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const services = [
-            // Company Registration
+            // Incorporation Registration
             { name: "Private Limited Company", url: "services/company-registration/private-limited-company.html" },
             { name: "LLP Registration", url: "services/company-registration/llp-registration.html" },
             { name: "One Person Company", url: "services/company-registration/one-person-company.html" },
