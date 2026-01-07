@@ -3,6 +3,60 @@
    Uma Legal Consultancy v2
 =================================== */
 
+/* Professional Typography */
+.content-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.content-section h2 i {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.content-section p {
+    color: var(--text-light);
+    line-height: 1.7;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+/* Enhanced bullet list styling */
+.bullet-list {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0 0;
+}
+
+.bullet-list li {
+    padding: 8px 0;
+    padding-left: 20px;
+    position: relative;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.bullet-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
 /* Service Page Header */
 .service-page-header {
     background: linear-gradient(135deg, var(--primary-color) 0%, #1a3a5c 100%);
@@ -278,6 +332,742 @@
     color: var(--text-dark);
 }
 
+/* Bullet List */
+.bullet-list {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0 0;
+}
+
+.bullet-list li {
+    padding: 5px 0;
+    padding-left: 20px;
+    position: relative;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+.bullet-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* LLP Suitable For */
+.llp-suitable-for {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.suitable-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+    border: 1px solid #b3d9ff;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.suitable-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+    background: linear-gradient(135deg, #e6f3ff 0%, #cce7ff 100%);
+}
+
+.suitable-item i {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.suitable-item span {
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* Key Benefits Grid */
+.key-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.key-benefit-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.key-benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--secondary-color);
+}
+
+.key-benefit-card i {
+    color: var(--accent-color);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.key-benefit-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.key-benefit-card p {
+    color: var(--text-light);
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Compliance Grid */
+.compliance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.compliance-card {
+    background: var(--light-bg);
+    border: 1px solid #e0e7ff;
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.compliance-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--secondary-color);
+}
+
+.compliance-card i {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.compliance-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.compliance-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.compliance-list li {
+    padding: 5px 0;
+    padding-left: 15px;
+    position: relative;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.compliance-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+/* Penalty Section */
+.penalty-section {
+    background: linear-gradient(135deg, #ffeaea 0%, #ffcccc 100%);
+    border: 2px solid #ff6b6b;
+    border-radius: 12px;
+    padding: 25px;
+    margin: 30px 0;
+}
+
+.penalty-section h3 {
+    color: #d63031;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.penalty-section h3 i {
+    color: #d63031;
+    font-size: 1.1rem;
+}
+
+.penalty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.penalty-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+}
+
+.penalty-item i {
+    color: #d63031;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.penalty-item span {
+    color: #d63031;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+/* Pricing Info Section */
+.pricing-info-section {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    border: 2px solid var(--accent-color);
+    border-radius: 12px;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+.pricing-info-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.pricing-info-section h3 i {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+}
+
+.pricing-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.pricing-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.pricing-row:last-child {
+    border-bottom: none;
+}
+
+.pricing-label {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 0.95rem;
+}
+
+.pricing-value {
+    color: var(--text-dark);
+    font-weight: 500;
+    text-align: right;
+    font-size: 0.95rem;
+}
+
+.pricing-note {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.pricing-note small {
+    color: var(--text-light);
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
+/* Professional Pricing */
+.professional-pricing {
+    margin-bottom: 40px;
+}
+
+.pricing-breakdown {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.pricing-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 25px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.pricing-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-color: var(--secondary-color);
+}
+
+.pricing-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--secondary-color), #ff8533);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.pricing-content h4 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.pricing-amount {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.pricing-detail {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.pricing-note-box {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+    border: 1px solid #f39c12;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.pricing-note-box i {
+    color: #d68910;
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.pricing-note-box p {
+    margin: 0;
+    color: #d68910;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* Compliance Hero */
+section .compliance-hero,
+div.compliance-hero,
+.compliance-hero {
+    background: #0a2540 !important; /* Navy Blue - Primary Color */
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 40px;
+    color: white !important;
+    text-align: center;
+}
+
+.compliance-intro p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
+    opacity: 0.95;
+    color: white !important;
+}
+
+/* Compliance Section */
+.compliance-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.compliance-requirements h3 {
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.compliance-requirements h3 i {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+}
+
+.compliance-warnings {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+/* Requirements Timeline */
+.requirements-timeline {
+    position: relative;
+    padding-left: 40px;
+}
+
+.requirements-timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--secondary-color), var(--accent-color));
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 60px;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -40px;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--secondary-color), #ff8533);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-number {
+    color: white;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.timeline-content h4 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.timeline-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.timeline-details li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+.timeline-details li i {
+    color: var(--secondary-color);
+    width: 16px;
+    font-size: 0.8rem;
+}
+
+.timeline-details strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Warning Card */
+.warning-card {
+    background: linear-gradient(135deg, #ffeaea 0%, #ffcccc 100%);
+    border: 2px solid #ff6b6b;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.15);
+}
+
+.warning-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.warning-header i {
+    color: #d63031;
+    font-size: 1.5rem;
+}
+
+.warning-header h4 {
+    color: #d63031;
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.warning-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.warning-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+}
+
+.warning-item i {
+    color: #d63031;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.warning-item span {
+    color: #d63031;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+/* Service Promise */
+.service-promise {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    border: 2px solid var(--accent-color);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 6px 20px rgba(0, 184, 148, 0.15);
+}
+
+.promise-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.promise-header i {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+}
+
+.promise-header h4 {
+    color: var(--primary-color);
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.promise-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.promise-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.promise-list li i {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+/* Promise Card */
+.promise-card {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    border: 2px solid var(--accent-color);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 6px 20px rgba(0, 184, 148, 0.15);
+}
+
+.promise-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.promise-header i {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+}
+
+.promise-header h4 {
+    color: var(--primary-color);
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.promise-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.promise-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+}
+
+.promise-item i {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.promise-item span {
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+/* Responsive Design for Compliance */
+@media (max-width: 1024px) {
+    .compliance-warnings {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .requirements-timeline {
+        padding-left: 30px;
+    }
+
+    .timeline-marker {
+        left: -30px;
+        width: 35px;
+        height: 35px;
+    }
+
+    .timeline-number {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .compliance-hero {
+        padding: 20px;
+    }
+
+    .compliance-intro p {
+        font-size: 1rem;
+    }
+
+    .pricing-breakdown {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .pricing-item {
+        padding: 20px;
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .requirements-timeline {
+        padding-left: 20px;
+    }
+
+    .timeline-marker {
+        left: -20px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .timeline-item {
+        padding-left: 40px;
+        margin-bottom: 30px;
+    }
+}
+
+
+/* Requirements Box */
+.requirements-box {
+    background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
+    border: 1px solid #e0e7ff;
+    border-radius: 12px;
+    padding: 25px;
+    margin-top: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.requirements-box p {
+    margin-bottom: 15px;
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.requirements-box .note-text {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
 /* Benefits Grid */
 .benefits-grid {
     display: grid;
@@ -489,20 +1279,33 @@
     border-left: 4px solid var(--accent-color);
 }
 
+.doc-category {
+    background: var(--light-bg);
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 3px solid var(--secondary-color);
+}
+
 .doc-category h4 {
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin-bottom: 15px;
     display: flex;
     align-items: center;
     gap: 10px;
+    color: var(--primary-color);
+    font-weight: 600;
+    letter-spacing: -0.01em;
 }
 
 .doc-category h4 i {
     color: var(--secondary-color);
+    font-size: 1.1rem;
 }
 
 .doc-category ul {
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .doc-category ul li {
@@ -511,6 +1314,8 @@
     font-size: 0.9rem;
     position: relative;
     padding-left: 20px;
+    line-height: 1.6;
+    font-weight: 500;
 }
 
 .doc-category ul li::before {
@@ -519,6 +1324,7 @@
     left: 0;
     color: var(--secondary-color);
     font-weight: bold;
+    font-size: 1.1rem;
 }
 
 /* Process Timeline */
