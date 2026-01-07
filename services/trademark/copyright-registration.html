@@ -28,20 +28,24 @@
 
     <!-- Header -->
     <header id="main-header">
-        <div class="container nav-container" style="position: relative;">
-            <a href="../../index.html" class="logo">
-                <span style="color: var(--secondary-color); font-size: 2rem;"><i class="fas fa-scale-balanced"></i></span>
-                <div>
-                   UMA LEGAL<br>
-                   <span style="font-size: 0.8rem; font-weight: 400; color: #666; letter-spacing: 1px;">CONSULTANCY</span>
-                </div>
-            </a>
+        <div class="container nav-container">
+            <div class="nav-logo">
+                <a href="../../index.html" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-scale-balanced"></i>
+                    </div>
+                    <div class="logo-text">
+                        <div class="logo-main">UMA LEGAL</div>
+                        <div class="logo-sub">CONSULTANCY</div>
+                    </div>
+                </a>
+            </div>
 
             <nav class="main-nav">
                 <ul>
                     <!-- Trademark Mega Menu -->
                     <li>
-                        <a href="#">Trademark <i class="fas fa-chevron-down fa-xs"></i></a>
+                        <a href="#" class="nav-link">Trademark <i class="fas fa-chevron-down fa-xs"></i></a>
                         <div class="mega-box">
                             <div class="mega-content">
                                 <div class="mega-col">
@@ -71,7 +75,7 @@
 
                     <!-- Incorporation Registration Mega Menu -->
                     <li>
-                        <a href="#">Incorporation Registration <i class="fas fa-chevron-down fa-xs"></i></a>
+                        <a href="#" class="nav-link">Incorporation Registration <i class="fas fa-chevron-down fa-xs"></i></a>
                         <div class="mega-box mega-box-wide">
                             <div class="mega-content mega-content-4col">
                                 <div class="mega-col">
@@ -126,7 +130,7 @@
 
                     <!-- Licenses Mega Menu -->
                     <li>
-                        <a href="#">Licenses <i class="fas fa-chevron-down fa-xs"></i></a>
+                        <a href="#" class="nav-link">Licenses <i class="fas fa-chevron-down fa-xs"></i></a>
                         <div class="mega-box">
                             <div class="mega-content">
                                 <div class="mega-col">
@@ -153,15 +157,18 @@
                         </div>
                     </li>
 
-                    <li><a href="../../services.html">All Services</a></li>
-                    <li><a href="../../contact.html">Contact</a></li>
+                    <li><a href="../../services.html" class="nav-link">All Services</a></li>
+                    <li><a href="../../contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
 
-                        <div class="search-container">
-                <input type="text" class="search-input" placeholder="Search for services (e.g. GST, Trademark)..." id="service-search">
-                <i class="fas fa-search search-icon"></i>
-                <div class="search-results" id="search-results"></div>
+                       <!-- Right Section - Search Only -->
+            <div class="nav-right">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search services..." id="service-search">
+                    <i class="fas fa-search search-icon"></i>
+                    <div class="search-results" id="search-results"></div>
+                </div>
             </div>
         </div>
     </header>

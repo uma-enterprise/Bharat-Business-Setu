@@ -1,3 +1,30 @@
+// Loading Screen Management
+document.addEventListener('DOMContentLoaded', () => {
+    const loadingScreen = document.getElementById('loading-screen');
+    if (loadingScreen) {
+        console.log('Loader detected');
+    
+        document.body.classList.add('loading');
+        document.body.style.overflow = 'hidden';
+        loadingScreen.style.display = 'flex';
+    } else {
+        console.log('No loader on this page — skipping loader logic');
+        document.body.classList.remove('loading');
+        document.body.style.overflow = '';
+    }
+    
+    // Wait for loading animation to complete (3 seconds)
+    setTimeout(() => {
+        // Instantly hide loading screen and show content
+        loadingScreen.style.display = 'none';
+
+        // Show main content immediately
+        document.body.classList.remove('loading');
+        document.body.classList.add('loaded');
+        document.body.style.overflow = '';
+    }, 3000);
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     // Dynamic Year
     const yearEl = document.getElementById('year');
