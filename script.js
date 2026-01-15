@@ -169,8 +169,10 @@ document.addEventListener('DOMContentLoaded', () => {
             { name: "Trademark Opposition", url: "services/trademark/trademark-opposition.html" },
             { name: "Copyright Registration", url: "services/trademark/copyright-registration.html" },
             // GST
-            { name: "GST Registration", url: "services.html#gst" },
-            { name: "GST Return Filing", url: "services.html#gst" },
+            { name: "GST Registration", url: "services/gst/gst-registration.html" },
+            { name: "GST Return Filing", url: "services/gst/gst-return-filing.html" },
+            { name: "GST Modification", url: "services/gst/gst-modification.html" },
+            { name: "GST Cancellation", url: "services/gst/gst-cancellation.html" },
             // Licenses
             { name: "FSSAI Registration", url: "services/licenses/fssai-registration.html" },
             { name: "FSSAI Renewal", url: "services/licenses/fssai-renewal.html" },
