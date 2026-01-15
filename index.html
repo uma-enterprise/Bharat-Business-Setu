@@ -10,48 +10,48 @@
 </head>
 <body>
 
-    <!-- Loading Screen -->
-    <div id="loading-screen" class="loading-screen">
-        <div class="loading-container">
-            <!-- Progressive Loading Circle -->
-            <div class="loading-circle-container">
-                <svg class="loading-circle-svg" viewBox="0 0 200 200">
-                    <!-- Background circle -->
-                    <circle class="loading-bg-circle" cx="100" cy="100" r="90"></circle>
-                    <!-- Progress circle -->
-                    <circle class="loading-progress-circle" cx="100" cy="100" r="90"></circle>
-                </svg>
-
-                <!-- Compliance Icons positioned inside circle -->
-                <div class="compliance-icons-inside">
-                    <!-- Icon 1: File Contract - Top -->
-                    <div class="compliance-icon icon-1">
-                        <i class="fas fa-file-contract"></i>
-                    </div>
-                    <!-- Icon 2: Scale Balanced - Top Right -->
-                    <div class="compliance-icon icon-2">
-                        <i class="fas fa-scale-balanced"></i>
-                    </div>
-                    <!-- Icon 3: Check Circle - Bottom Right -->
-                    <div class="compliance-icon icon-3">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <!-- Icon 4: Shield - Bottom -->
-                    <div class="compliance-icon icon-4">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <!-- Icon 5: Stamp - Center (appears last) -->
-                    <div class="compliance-icon icon-5">
-                        <i class="fas fa-stamp"></i>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Brand Text Below Circle -->
-            <div class="loading-brand">Bharat Business Setu</div>
-        </div>
-    </div>
-
+    <!--     <!-- Loading Screen --> -->
+    <!--     <div id="loading-screen" class="loading-screen"> -->
+    <!--         <div class="loading-container"> -->
+    <!--             <!-- Progressive Loading Circle --> -->
+    <!--             <div class="loading-circle-container"> -->
+    <!--                 <svg class="loading-circle-svg" viewBox="0 0 200 200"> -->
+    <!--                     <!-- Background circle --> -->
+    <!--                     <circle class="loading-bg-circle" cx="100" cy="100" r="90"></circle> -->
+    <!--                     <!-- Progress circle --> -->
+    <!--                     <circle class="loading-progress-circle" cx="100" cy="100" r="90"></circle> -->
+    <!--                 </svg> -->
+    <!--  -->
+    <!--                 <!-- Compliance Icons positioned inside circle --> -->
+    <!--                 <div class="compliance-icons-inside"> -->
+    <!--                     <!-- Icon 1: File Contract - Top --> -->
+    <!--                     <div class="compliance-icon icon-1"> -->
+    <!--                         <i class="fas fa-file-contract"></i> -->
+    <!--                     </div> -->
+    <!--                     <!-- Icon 2: Scale Balanced - Top Right --> -->
+    <!--                     <div class="compliance-icon icon-2"> -->
+    <!--                         <i class="fas fa-scale-balanced"></i> -->
+    <!--                     </div> -->
+    <!--                     <!-- Icon 3: Check Circle - Bottom Right --> -->
+    <!--                     <div class="compliance-icon icon-3"> -->
+    <!--                         <i class="fas fa-check-circle"></i> -->
+    <!--                     </div> -->
+    <!--                     <!-- Icon 4: Shield - Bottom --> -->
+    <!--                     <div class="compliance-icon icon-4"> -->
+    <!--                         <i class="fas fa-shield-alt"></i> -->
+    <!--                     </div> -->
+    <!--                     <!-- Icon 5: Stamp - Center (appears last) --> -->
+    <!--                     <div class="compliance-icon icon-5"> -->
+    <!--                         <i class="fas fa-stamp"></i> -->
+    <!--                     </div> -->
+    <!--                 </div> -->
+    <!--             </div> -->
+    <!--  -->
+    <!--             <!-- Brand Text Below Circle --> -->
+    <!--             <div class="loading-brand">Bharat Business Setu</div> -->
+    <!--         </div> -->
+    <!--     </div> -->
+    <!--  -->
     <!-- Top Bar -->
     <div class="top-bar">
         <div class="container top-bar-content">
@@ -82,12 +82,20 @@
                     </div>
                 </a>
             </div>
+            <!-- Mobile Hamburger Button -->
+            <button class="mobile-nav-toggle" aria-label="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
 
             <!-- Navigation Section -->
+            <div class="mobile-nav-wrapper">
             <nav class="main-nav">
+                <button class="mobile-nav-close" aria-label="Close Menu">
+                    <i class="fas fa-times"></i>
+                </button>
                 <ul>
                     <!-- Trademark Mega Menu -->
-                    <li>
+                    <li data-has-submenu="true">
                         <a href="#" class="nav-link">
                             <span>Trademark</span>
                             <i class="fas fa-chevron-down nav-arrow"></i>
@@ -120,7 +128,7 @@
                     </li>
 
                     <!-- Incorporation Registration Mega Menu -->
-                    <li>
+                    <li data-has-submenu="true">
                         <a href="#" class="nav-link">
                             <span>Incorporation</span>
                             <i class="fas fa-chevron-down nav-arrow"></i>
@@ -178,7 +186,7 @@
                     </li>
 
                     <!-- GST Mega Menu -->
-                    <li>
+                    <li data-has-submenu="true">
                         <a href="#" class="nav-link">
                             <span>GST</span>
                             <i class="fas fa-chevron-down nav-arrow"></i>
@@ -211,7 +219,7 @@
                     </li>
 
                     <!-- Licenses Mega Menu -->
-                    <li>
+                    <li data-has-submenu="true">
                         <a href="#" class="nav-link">
                             <span>Licenses</span>
                             <i class="fas fa-chevron-down nav-arrow"></i>
@@ -246,6 +254,7 @@
                     <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
+            </div>
 
             <!-- Right Section - Search Only -->
             <div class="nav-right">

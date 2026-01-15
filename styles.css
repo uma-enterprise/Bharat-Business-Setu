@@ -656,6 +656,26 @@ header {
     transform: translateX(-50%) translateY(0);
 }
 
+/* Mega Menu Position Adjustments for Viewport Boundaries */
+.mega-box.mega-left {
+    left: 0;
+    transform: translateX(0) translateY(-8px);
+}
+
+.mega-box.mega-left:hover {
+    transform: translateX(0) translateY(0);
+}
+
+.mega-box.mega-right {
+    left: auto;
+    right: 0;
+    transform: translateX(0) translateY(-8px);
+}
+
+.mega-box.mega-right:hover {
+    transform: translateX(0) translateY(0);
+}
+
 .mega-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1540,7 +1560,7 @@ footer {
     width: 85%;
     height: 100vh;
     background: var(--white);
-    padding: 80px 30px 40px;
+    padding: 20px 30px 40px;
     box-shadow: -5px 0 15px rgba(0,0,0,0.1);
     transition: all 0.4s ease;
     z-index: 1500;
@@ -1792,3 +1812,250 @@ footer {
     }
 }
 
+/* =========================
+   MOBILE NAVBAR FIX (ACCORDION)
+   ========================= */
+
+   @media (max-width: 768px) {
+
+    /* Hamburger always visible */
+    .mobile-nav-toggle {
+      display: block;
+      position: absolute;
+      right: 20px;
+      top: 22px;
+    }
+  
+    /* Slide-in mobile menu */
+    .mobile-nav-wrapper {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1500;
+    }
+  
+    .main-nav {
+      position: fixed;
+      right: -100%;
+      top: 0;
+      width: 85%;
+      max-width: 350px;
+      height: 100vh;
+      background: #fff;
+      padding: 45px 15px 40px 15px;
+      transition: right 0.35s ease;
+      overflow-y: auto;
+      overflow-x: hidden;
+      pointer-events: auto;
+      box-sizing: border-box;
+    }
+  
+    .main-nav.active {
+      right: 0;
+    }
+  
+    /* Vertical menu */
+    .main-nav ul {
+      flex-direction: column;
+      gap: 0;
+      align-items: stretch;
+    }
+  
+    .main-nav > ul > li {
+      width: 100%;
+      border-bottom: 1px solid #eee;
+    }
+  
+    /* Parent links */
+    .nav-link {
+      width: 100%;
+      justify-content: space-between;
+      padding: 14px 10px;
+      font-size: 1rem;
+    }
+  
+    /* Parent link when open - highlight for visibility */
+    .main-nav li.open > .nav-link {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      border-left: 3px solid var(--primary-color, #1a56db);
+      font-weight: 600;
+    }
+  
+    /* Arrow rotation */
+    .main-nav li.open > .nav-link .nav-arrow {
+      transform: rotate(180deg);
+    }
+  
+    /* ===== SUBMENU (ACCORDION) ===== */
+  
+    .mega-box {
+      position: static !important;
+      transform: none !important;
+      left: 0 !important;
+      right: 0 !important;
+      min-width: 100% !important;
+      max-width: 100% !important;
+      width: 100% !important;
+      display: block;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 1;
+      visibility: visible;
+      box-shadow: none;
+      border: none;
+      padding: 0;
+      margin: 0;
+      transition: max-height 0.35s ease;
+      box-sizing: border-box;
+    }
+  
+    /* Open state */
+    .main-nav li.open > .mega-box {
+      max-height: 2000px;
+      padding: 10px 5px 15px 5px;
+    }
+  
+    /* Disable hover logic on mobile */
+    .main-nav > ul > li:hover .mega-box {
+      display: block;
+    }
+  
+    /* Submenu layout */
+    .mega-content,
+    .mega-content-4col {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+  
+    .mega-col h3 {
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+  
+    .mega-col ul li a {
+      font-size: 0.9rem;
+      padding: 10px 8px !important;
+      white-space: normal;
+    }
+  
+  }
+
+  /* ============================
+   FIX LONG SUBMENU OVERFLOW
+   ============================ */
+
+@media (max-width: 768px) {
+
+  /* Ensure nav can scroll fully */
+  .main-nav {
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Fix mega-box positioning on mobile - prevent left overflow */
+  .mega-box {
+    left: 0 !important;
+    right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Allow submenu itself to scroll */
+  .main-nav li.open > .mega-box {
+    max-height: 45vh !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-left: 0 !important;
+    padding-right: 10px !important;
+  }
+
+  /* Fix mega-content width */
+  .mega-content,
+  .mega-content-4col {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Fix mega columns */
+  .mega-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    box-sizing: border-box !important;
+  }
+
+  .mega-col h3 {
+    padding-left: 5px;
+  }
+
+  /* Improve touch spacing */
+  .mega-col ul li a {
+    display: block;
+    line-height: 1.4;
+    padding-left: 15px !important;
+    text-align: left;
+  }
+
+}
+
+/* Mobile Nav Close Button */
+@media (max-width: 768px) {
+  .mobile-nav-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-color, #333);
+    cursor: pointer;
+    z-index: 10;
+    padding: 5px;
+  }
+  
+  .mobile-nav-close:hover {
+    color: var(--primary-color, #1a56db);
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-nav-close {
+    display: none;
+  }
+}
+
+/* Fix: Remove backdrop-filter on mobile to allow fixed positioning */
+@media (max-width: 768px) {
+  header {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
+/* Fix: Remove transform on header for mobile to fix fixed positioning */
+@media (max-width: 768px) {
+  header {
+    transform: none !important;
+  }
+}
+
+/* Fix: Start menu items from top, not centered */
+@media (max-width: 768px) {
+  .main-nav ul {
+    justify-content: flex-start !important;
+    align-items: stretch !important;
+  }
+}
+
+/* Hide hamburger toggle when mobile menu is open (to avoid duplicate X) */
+@media (max-width: 768px) {
+  .main-nav.active ~ .mobile-nav-toggle,
+  .mobile-nav-wrapper:has(.main-nav.active) ~ .mobile-nav-toggle {
+    display: none !important;
+  }
+}

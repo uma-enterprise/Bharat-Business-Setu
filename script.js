@@ -16,7 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Wait for loading animation to complete (3 seconds)
     setTimeout(() => {
         // Instantly hide loading screen and show content
-        loadingScreen.style.display = 'none';
+        if (loadingScreen) {
+            loadingScreen.style.display = 'none';
+        }
 
         // Show main content immediately
         document.body.classList.remove('loading');
@@ -59,32 +61,71 @@ document.addEventListener('DOMContentLoaded', () => {
         navToggle.addEventListener('click', (e) => {
             e.stopPropagation();
             mainNav.classList.toggle('active');
-            const icon = navToggle.querySelector('i');
+            // Hide hamburger when menu is open (close button is inside the nav)
             if (mainNav.classList.contains('active')) {
-                icon.className = 'fas fa-times';
+                navToggle.style.display = 'none';
             } else {
-                icon.className = 'fas fa-bars';
+                navToggle.style.display = 'block';
                 // Close all submenus when closing main nav
                 document.querySelectorAll('.mega-box').forEach(box => box.style.display = 'none');
             }
         });
 
-        // Mobile Submenu Toggle
-        const menuItemsWithSub = document.querySelectorAll('.main-nav > ul > li > a');
-        menuItemsWithSub.forEach(item => {
-            item.addEventListener('click', (e) => {
-                if (window.innerWidth <= 768) {
-                    const megaBox = item.parentElement.querySelector('.mega-box');
-                    if (megaBox) {
-                        e.preventDefault();
-                        const isVisible = megaBox.style.display === 'block';
-                        // Close other submenus
-                        document.querySelectorAll('.mega-box').forEach(box => box.style.display = 'none');
-                        megaBox.style.display = isVisible ? 'none' : 'block';
-                    }
+        // Mobile Nav Close Button (inside the nav panel)
+        const closeBtn = document.querySelector('.mobile-nav-close');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                mainNav.classList.remove('active');
+                navToggle.style.display = 'block';
+                document.querySelectorAll('.main-nav > ul > li').forEach(li => li.classList.remove('open'));
+            });
+        }
+
+        // Mobile Accordion Submenu (CLEAN)
+        const menuParents = document.querySelectorAll('.main-nav > ul > li[data-has-submenu="true"]');
+
+        menuParents.forEach(li => {
+            const link = li.querySelector('.nav-link');
+            if (!link) return; // Skip if no nav-link found
+
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth > 768) return;
+
+                e.preventDefault();
+                e.stopPropagation();
+
+                const isOpen = li.classList.contains('open');
+
+                // Close all other submenus
+                menuParents.forEach(other => other.classList.remove('open'));
+
+                // Toggle current
+                if (!isOpen) {
+                    li.classList.add('open');
+                    
+                    // Only scroll if the parent link is not fully visible
+                    setTimeout(() => {
+                        const navContainer = li.closest('.main-nav');
+                        if (navContainer) {
+                            const linkRect = link.getBoundingClientRect();
+                            const navRect = navContainer.getBoundingClientRect();
+                            
+                            // Check if parent link is above the visible area
+                            if (linkRect.top < navRect.top) {
+                                // Scroll just enough to show the parent at the top
+                                const scrollAmount = navContainer.scrollTop + (linkRect.top - navRect.top) - 10;
+                                navContainer.scrollTo({
+                                    top: Math.max(0, scrollAmount),
+                                    behavior: 'smooth'
+                                });
+                            }
+                        }
+                    }, 100);
                 }
             });
         });
+
 
         // Close menu when clicking outside
         document.addEventListener('click', (e) => {
@@ -222,5 +263,53 @@ document.addEventListener('DOMContentLoaded', () => {
                 searchResults.style.display = 'none';
             }
         });
+
+        // Mega Menu Viewport Boundary Detection
+        const adjustMegaMenuPosition = () => {
+            const megaBoxes = document.querySelectorAll('.mega-box');
+
+            megaBoxes.forEach(box => {
+                const parentLi = box.closest('.main-nav > ul > li');
+                if (!parentLi) return;
+
+                // Reset positioning classes
+                box.classList.remove('mega-left', 'mega-right');
+
+                // Calculate positions
+                const boxRect = box.getBoundingClientRect();
+                const parentRect = parentLi.getBoundingClientRect();
+                const viewportWidth = window.innerWidth;
+
+                // Check if centered box would overflow left or right
+                const centerPosition = parentRect.left + parentRect.width / 2;
+                const boxLeftEdge = centerPosition - box.offsetWidth / 2;
+                const boxRightEdge = centerPosition + box.offsetWidth / 2;
+
+                if (boxLeftEdge < 20) {
+                    // Would overflow left - align to left edge of parent
+                    box.classList.add('mega-left');
+                } else if (boxRightEdge > viewportWidth - 20) {
+                    // Would overflow right - align to right edge of parent
+                    box.classList.add('mega-right');
+                }
+                // Otherwise keep centered (default)
+            });
+        };
+
+        // Adjust on hover (desktop) and window resize
+        document.addEventListener('mouseover', (e) => {
+            if (window.innerWidth > 900) { // Only on desktop
+                const megaBox = e.target.closest('.main-nav > ul > li')?.querySelector('.mega-box');
+                if (megaBox) {
+                    setTimeout(adjustMegaMenuPosition, 10); // Small delay to ensure positioning is calculated after display
+                }
+            }
+        });
+
+        // Adjust on window resize
+        window.addEventListener('resize', adjustMegaMenuPosition);
+
+        // Initial adjustment
+        adjustMegaMenuPosition();
     }
 });
