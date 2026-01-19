@@ -681,6 +681,12 @@ header {
     grid-template-columns: 1fr 1fr;
     gap: 40px;
 }
+/* FORCE 3 columns inside wide mega menu */
+.mega-box-wide .mega-content {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px;
+}
 
 .mega-col {
     min-width: 0;
