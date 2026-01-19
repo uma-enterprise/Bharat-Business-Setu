@@ -2108,6 +2108,34 @@ footer {
   .mobile-nav-close {
     display: none;
   }
+  
+  /* Hide hamburger menu on desktop/wide screens */
+  .mobile-nav-toggle {
+    display: none !important;
+  }
+  
+  /* Ensure mobile nav is hidden on desktop */
+  .main-nav {
+    position: static !important;
+    transform: none !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    z-index: auto !important;
+    width: auto !important;
+    max-width: none !important;
+    height: auto !important;
+    overflow: visible !important;
+    background: transparent !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    clip-path: none !important;
+  }
+  
+  .mobile-nav-wrapper {
+    position: static !important;
+    display: contents !important;
+  }
 }
 
 /* Fix: Remove backdrop-filter on mobile to allow fixed positioning */
