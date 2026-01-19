@@ -66,8 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 navToggle.style.display = 'none';
             } else {
                 navToggle.style.display = 'block';
-                // Close all submenus when closing main nav
-                document.querySelectorAll('.mega-box').forEach(box => box.style.display = 'none');
+                // Close all submenus when closing main nav - use class, not inline style
+                document.querySelectorAll('.main-nav > ul > li').forEach(li => li.classList.remove('open'));
             }
         });
 
@@ -132,7 +132,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!mainNav.contains(e.target) && !navToggle.contains(e.target) && mainNav.classList.contains('active')) {
                 mainNav.classList.remove('active');
                 navToggle.querySelector('i').className = 'fas fa-bars';
-                document.querySelectorAll('.mega-box').forEach(box => box.style.display = 'none');
+                // Close all submenus - use class, not inline style
+                document.querySelectorAll('.main-nav > ul > li').forEach(li => li.classList.remove('open'));
             }
         });
 

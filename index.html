@@ -7,6 +7,19 @@
     <meta name="description" content="One-stop solution for GST, Incorporation Registration, Trademark, and Legal Compliance in India. Fast, Affordable, and Trusted by thousands.">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        // Immediately hide mobile nav to prevent flash/overlap
+        document.addEventListener('DOMContentLoaded', function() {
+            const nav = document.querySelector('.main-nav');
+            if (nav && !nav.classList.contains('active')) {
+                nav.style.transform = 'translateX(100%)';
+                nav.style.visibility = 'hidden';
+                nav.style.opacity = '0';
+                nav.style.pointerEvents = 'none';
+                nav.style.zIndex = '-1';
+            }
+        });
+    </script>
 </head>
 <body>
 
@@ -89,7 +102,7 @@
 
             <!-- Navigation Section -->
             <div class="mobile-nav-wrapper">
-            <nav class="main-nav">
+            <nav class="main-nav" style="transform: translateX(100%); visibility: hidden; opacity: 0; pointer-events: none; z-index: -1;">
                 <button class="mobile-nav-close" aria-label="Close Menu">
                     <i class="fas fa-times"></i>
                 </button>
