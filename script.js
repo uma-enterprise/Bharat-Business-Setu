@@ -314,3 +314,27 @@ document.addEventListener('DOMContentLoaded', () => {
         adjustMegaMenuPosition();
     }
 });
+
+// Auto-detect pricing card count and add appropriate class (1-2 cards only)
+document.addEventListener('DOMContentLoaded', () => {
+    const pricingGrids = document.querySelectorAll('.pricing-grid');
+    
+    pricingGrids.forEach(grid => {
+        // Skip if already has a class (manually set)
+        if (grid.classList.contains('two-cards') || 
+            grid.classList.contains('single-card')) {
+            return;
+        }
+        
+        const cards = grid.querySelectorAll('.pricing-card');
+        const cardCount = cards.length;
+        
+        // Add appropriate class based on card count (1 or 2 only)
+        if (cardCount === 1) {
+            grid.classList.add('single-card');
+        } else if (cardCount === 2) {
+            grid.classList.add('two-cards');
+        }
+        // Note: This design supports max 2 cards
+    });
+});

@@ -2376,3 +2376,25 @@ footer {
     display: none !important;
   }
 }
+
+/* =========================
+   SINGLE COLUMN MEGA MENU FIX
+   ========================= */
+
+   .mega-box-single {
+    min-width: unset;
+    max-width: unset;
+    width: auto;
+    padding: 28px 30px;
+}
+
+.mega-box-single .mega-content {
+    display: inline-grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: fit-content;
+}
+
+.mega-box-single .mega-col {
+    min-width: 260px;
+}
