@@ -216,7 +216,7 @@
         <div class="container">
             <nav class="breadcrumb">
                 <a href="../../index.html">Home</a> <i class="fas fa-chevron-right"></i>
-                <a href="../../services.html">Services</a> <i class="fas fa-chevron-right"></i>
+                <span>Services</span> <i class="fas fa-chevron-right"></i>
                 <span>GST Registration</span>
             </nav>
             
@@ -243,7 +243,7 @@
                         <div class="stat-item">
                             <i class="fas fa-rupee-sign"></i>
                             <div>
-                                <strong>₹2,999</strong>
+                                <strong>₹1,499</strong>
                                 <span>Starting Price</span>
                             </div>
                         </div>
@@ -590,44 +590,93 @@
                     <!-- Pricing -->
                     <div class="content-section">
                         <h2><i class="fas fa-rupee-sign"></i> Our Pricing</h2>
-                        <div class="professional-pricing">
-                            <div class="pricing-breakdown">
-                                <div class="pricing-item">
-                                    <div class="pricing-icon">
-                                        <i class="fas fa-user-tie"></i>
-                                    </div>
-                                    <div class="pricing-content">
-                                        <h4>Professional Fees</h4>
-                                        <p class="pricing-amount">Starting from ₹2,999*</p>
-                                    </div>
+                        <div class="pricing-grid">
+                            <!-- Start Up Plan -->
+                            <div class="pricing-card">
+                                <div class="pricing-badge">Start Up</div>
+                                <div class="pricing-header basic">
+                                    <h3>Start Up</h3>
+                                    <div class="price">₹1,499</div>
+                                    <p>*Excluding Govt. Fees</p>
                                 </div>
-
-                                <div class="pricing-item">
-                                    <div class="pricing-icon">
-                                        <i class="fas fa-building"></i>
-                                    </div>
-                                    <div class="pricing-content">
-                                        <h4>Government Fees</h4>
-                                        <p class="pricing-amount">As applicable</p>
-                                    </div>
-                                </div>
-
-                                <div class="pricing-item">
-                                    <div class="pricing-icon">
-                                        <i class="fas fa-plus-circle"></i>
-                                    </div>
-                                    <div class="pricing-content">
-                                        <h4>Other Charges</h4>
-                                        <p class="pricing-detail">Return filing fees, DSC (if required), and third-party charges extra</p>
-                                    </div>
-                                </div>
+                                <ul class="pricing-features">
+                                    <li><i class="fas fa-check"></i> Application filing for GSTIN</li>
+                                    <li><i class="fas fa-check"></i> Generate ARN & TRN number</li>
+                                    <li><i class="fas fa-check"></i> Call, Chat, Email Support</li>
+                                    <li><i class="fas fa-check"></i> Personally assigned GST Expert</li>
+                                    <li><i class="fas fa-check"></i> Consultation Available in 3 Languages including English</li>
+                                </ul>
+                                <a href="#enquiry-form" class="btn btn-outline-dark">Get Started</a>
                             </div>
 
-                            <div class="pricing-note-box">
-                                <i class="fas fa-info-circle"></i>
-                                <p><strong>*Pricing may vary based on business type and complexity. Contact us for a customized quote.</strong></p>
+                            <!-- Basic Plan -->
+                            <div class="pricing-card">
+                                <div class="pricing-badge">Basic</div>
+                                <div class="pricing-header standard">
+                                    <h3>Basic</h3>
+                                    <div class="price">₹2,799</div>
+                                    <p>*Excluding Govt. Fees</p>
+                                </div>
+                                <ul class="pricing-features">
+                                    <li><i class="fas fa-check"></i> GST Registration absolutely FREE</li>
+                                    <li><i class="fas fa-check"></i> GST Return Filing for 3 Months</li>
+                                    <li><i class="fas fa-check"></i> Call, Chat, Email Support</li>
+                                    <li><i class="fas fa-check"></i> Personally assigned GST Expert</li>
+                                    <li><i class="fas fa-check"></i> Consultation Available in 3 Languages including English</li>
+                                </ul>
+                                <a href="#enquiry-form" class="btn btn-outline-dark">Get Started</a>
+                            </div>
+
+                            <!-- Standard Plan -->
+                            <div class="pricing-card featured">
+                                <div class="pricing-badge">Most Popular</div>
+                                <div class="pricing-header premium">
+                                    <h3>Standard</h3>
+                                    <div class="price">₹4,999</div>
+                                    <p>*Excluding Govt. Fees</p>
+                                </div>
+                                <ul class="pricing-features">
+                                    <li><i class="fas fa-check"></i> GST Registration absolutely FREE</li>
+                                    <li><i class="fas fa-check"></i> GST Return Filing for 6 Months</li>
+                                    <li><i class="fas fa-check"></i> Call, Chat, Email Support</li>
+                                    <li><i class="fas fa-check"></i> Personally assigned GST Expert</li>
+                                    <li><i class="fas fa-check"></i> Consultation Available in 3 Languages including English</li>
+                                </ul>
+                                <a href="#enquiry-form" class="btn btn-outline-dark">Get Started</a>
                             </div>
                         </div>
+
+                        <!-- View More Button -->
+                        <div style="text-align: center; margin: 25px 0;">
+                            <button type="button" class="btn btn-outline-primary" onclick="toggleMoreGSTPlans()" style="padding: 12px 30px;">
+                                <span class="view-more-text">+ View More Plans</span>
+                                <span class="view-less-text" style="display: none;">- View Less</span>
+                            </button>
+                        </div>
+
+                        <!-- Additional Plans - Hidden Initially -->
+                        <div id="more_gst_plans" style="display:none;">
+                            <div class="pricing-grid">
+                                <!-- Premium Plan -->
+                                <div class="pricing-card">
+                                    <div class="pricing-badge">Premium</div>
+                                    <div class="pricing-header allinone">
+                                        <h3>Premium</h3>
+                                        <div class="price">₹7,999</div>
+                                        <p>*Excluding Govt. Fees</p>
+                                    </div>
+                                    <ul class="pricing-features">
+                                        <li><i class="fas fa-check"></i> GST Registration absolutely FREE</li>
+                                        <li><i class="fas fa-check"></i> GST Return Filing for 12 Months</li>
+                                        <li><i class="fas fa-check"></i> Call, Chat, Email Support</li>
+                                        <li><i class="fas fa-check"></i> Personally assigned GST Expert</li>
+                                        <li><i class="fas fa-check"></i> Consultation Available in 3 Languages including English</li>
+                                    </ul>
+                                    <a href="#enquiry-form" class="btn btn-outline-dark">Get Started</a>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="pricing-note"><i class="fas fa-info-circle"></i> Government Fee: As applicable. Prices shown are exclusive of government fees.</p>
                     </div>
 
                     <!-- FAQs -->
@@ -754,6 +803,23 @@
                 item.classList.toggle('active');
             });
         });
+
+        // Toggle More GST Plans Function
+        function toggleMoreGSTPlans() {
+            const morePlans = document.getElementById('more_gst_plans');
+            const viewMoreText = document.querySelector('.view-more-text');
+            const viewLessText = document.querySelector('.view-less-text');
+            
+            if (morePlans.style.display === 'none' || !morePlans.style.display) {
+                morePlans.style.display = 'block';
+                if (viewMoreText) viewMoreText.style.display = 'none';
+                if (viewLessText) viewLessText.style.display = 'inline';
+            } else {
+                morePlans.style.display = 'none';
+                if (viewMoreText) viewMoreText.style.display = 'inline';
+                if (viewLessText) viewLessText.style.display = 'none';
+            }
+        }
     </script>
 
     <script src="../../script.js"></script>

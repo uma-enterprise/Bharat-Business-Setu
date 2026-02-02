@@ -216,7 +216,7 @@
         <div class="container">
             <nav class="breadcrumb">
                 <a href="../../index.html">Home</a> <i class="fas fa-chevron-right"></i>
-                <a href="../../services.html">Services</a> <i class="fas fa-chevron-right"></i>
+                <span>Services</span> <i class="fas fa-chevron-right"></i>
                 <span>Trademark Opposition</span>
             </nav>
             
@@ -229,7 +229,7 @@
                         <div class="stat-item">
                             <i class="fas fa-balance-scale"></i>
                             <div>
-                                <strong>2,000+</strong>
+                                <strong>150+</strong>
                                 <span>Cases Handled</span>
                             </div>
                         </div>
@@ -243,7 +243,7 @@
                         <div class="stat-item">
                             <i class="fas fa-rupee-sign"></i>
                             <div>
-                                <strong>₹9,999</strong>
+                                <strong>₹2,249</strong>
                                 <span>Starting Price</span>
                             </div>
                         </div>
@@ -354,37 +354,111 @@
                     <div class="content-section">
                         <h2><i class="fas fa-rupee-sign"></i> Our Pricing</h2>
                         <div class="pricing-grid">
+                            <!-- Reply to Opposition Notice -->
                             <div class="pricing-card">
-                                <div class="pricing-badge">Basic</div>
+                                <div class="pricing-badge">Reply Service</div>
                                 <div class="pricing-header basic">
-                                    <h3>Filing Opposition</h3>
-                                    <div class="price">₹9,999</div>
-                                    <p>+ Govt. Fee ₹2,700</p>
+                                    <h3>Reply to Opposition Notice</h3>
+                                    <div class="price">₹2,249</div>
+                                    <p>*Excluding Govt. Fees</p>
                                 </div>
                                 <ul class="pricing-features">
-                                    <li><i class="fas fa-check"></i> TM-O Notice Drafting</li>
-                                    <li><i class="fas fa-check"></i> Grounds of Opposition</li>
-                                    <li><i class="fas fa-check"></i> Online Filing</li>
-                                    <li><i class="fas fa-check"></i> Evidence Support</li>
-                                    <li><i class="fas fa-times" style="color: #ccc;"></i> Hearing</li>
+                                    <li><i class="fas fa-check"></i> Filing a reply on behalf of my client who already received the opposition notice from the other party</li>
+                                    <li><i class="fas fa-check"></i> On call support</li>
+                                    <li><i class="fas fa-check"></i> Email support</li>
+                                    <li><i class="fas fa-check"></i> Drafting Opposition Notice reply & Filing</li>
+                                    <li><i class="fas fa-check"></i> Free advice</li>
                                 </ul>
                                 <a href="#enquiry-form" class="btn btn-outline-dark">Get Started</a>
                             </div>
-                            <div class="pricing-card featured">
-                                <div class="pricing-badge">Most Popular</div>
+
+                            <!-- Opposition Notice -->
+                            <div class="pricing-card">
+                                <div class="pricing-badge">Notice Service</div>
                                 <div class="pricing-header standard">
-                                    <h3>Complete Opposition</h3>
-                                    <div class="price">₹24,999</div>
-                                    <p>+ Govt. Fees</p>
+                                    <h3>Opposition Notice</h3>
+                                    <div class="price">₹2,249</div>
+                                    <p>*Excluding Govt. Fees</p>
                                 </div>
                                 <ul class="pricing-features">
-                                    <li><i class="fas fa-check"></i> Everything in Basic</li>
-                                    <li><i class="fas fa-check"></i> Evidence Preparation</li>
-                                    <li><i class="fas fa-check"></i> Hearing Representation</li>
-                                    <li><i class="fas fa-check"></i> Reply to Counter</li>
-                                    <li><i class="fas fa-check"></i> Until Final Order</li>
-                                </ul></div>
+                                    <li><i class="fas fa-check"></i> Serving a notice of opposition on behalf of the client who wants to oppose/ object on another Trade Mark</li>
+                                    <li><i class="fas fa-check"></i> On call support</li>
+                                    <li><i class="fas fa-check"></i> Email support</li>
+                                    <li><i class="fas fa-check"></i> Drafting Opposition Notice & Filing</li>
+                                    <li><i class="fas fa-check"></i> Free advice</li>
+                                </ul>
+                                <a href="#enquiry-form" class="btn btn-outline-dark">Get Started</a>
+                            </div>
+
+                            <!-- Opposition Notice & reply -->
+                            <div class="pricing-card featured">
+                                <div class="pricing-badge">Most Popular</div>
+                                <div class="pricing-header premium">
+                                    <h3>Opposition Notice & Reply</h3>
+                                    <div class="price">₹4,049</div>
+                                    <p>*Excluding Govt. Fees</p>
+                                </div>
+                                <ul class="pricing-features">
+                                    <li><i class="fas fa-check"></i> All in One services regarding Opposition</li>
+                                    <li><i class="fas fa-check"></i> On Call Support</li>
+                                    <li><i class="fas fa-check"></i> Email Support</li>
+                                    <li><i class="fas fa-check"></i> Drafting TM Opposition Notice, Reply & Filing</li>
+                                    <li><i class="fas fa-check"></i> Power of Attorney Change</li>
+                                    <li><i class="fas fa-check"></i> Extension of time form</li>
+                                    <li><i class="fas fa-check"></i> Free Advice</li>
+                                </ul>
+                                <a href="#enquiry-form" class="btn btn-outline-dark">Get Started</a>
+                            </div>
                         </div>
+
+                        <!-- View More Button -->
+                        <div style="text-align: center; margin: 25px 0;">
+                            <button type="button" class="btn btn-outline-primary" onclick="toggleMoreOppositionPlans()" style="padding: 12px 30px;">
+                                <span class="view-more-text">+ View More Plans</span>
+                                <span class="view-less-text" style="display: none;">- View Less</span>
+                            </button>
+                        </div>
+
+                        <!-- Additional Plans - Hidden Initially -->
+                        <div id="more_opposition_plans" style="display:none;">
+                            <div class="pricing-grid">
+                                <!-- Opposition Reply & Hearing -->
+                                <div class="pricing-card">
+                                    <div class="pricing-badge">Reply & Hearing</div>
+                                    <div class="pricing-header special">
+                                        <h3>Opposition Reply & Hearing</h3>
+                                        <div class="price">₹17,594</div>
+                                        <p>*Excluding Govt. Fees</p>
+                                    </div>
+                                    <ul class="pricing-features">
+                                        <li><i class="fas fa-check"></i> Filing a reply on behalf of my client who already received the opposition notice from the other party</li>
+                                        <li><i class="fas fa-check"></i> On Call Support</li>
+                                        <li><i class="fas fa-check"></i> Email Support</li>
+                                        <li><i class="fas fa-check"></i> Drafting TM Opposition Reply & Filing</li>
+                                        <li><i class="fas fa-check"></i> Free Advice</li>
+                                    </ul>
+                                    <a href="#enquiry-form" class="btn btn-outline-dark">Get Started</a>
+                                </div>
+
+                                <!-- Trademark Opposition Hearing -->
+                                <div class="pricing-card">
+                                    <div class="pricing-badge">Hearing Service</div>
+                                    <div class="pricing-header combo">
+                                        <h3>Trademark Opposition Hearing</h3>
+                                        <div class="price">₹12,915</div>
+                                        <p>*Excluding Govt. Fees</p>
+                                    </div>
+                                    <ul class="pricing-features">
+                                        <li><i class="fas fa-check"></i> We arrange trademark hearing process following rules</li>
+                                        <li><i class="fas fa-check"></i> On Call Support</li>
+                                        <li><i class="fas fa-check"></i> Email Support</li>
+                                        <li><i class="fas fa-check"></i> Free Advice</li>
+                                    </ul>
+                                    <a href="#enquiry-form" class="btn btn-outline-dark">Get Started</a>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="pricing-note"><i class="fas fa-info-circle"></i> Prices shown are with 10% discount. Government fees are additional.</p>
                     </div>
 
                     <div class="content-section">
@@ -438,9 +512,12 @@
                             </div>
                             <div class="form-group">
                                 <select class="form-control" required>
-                                    <option value="">Select Service Type</option>
-                                    <option value="file">File Opposition</option>
-                                    <option value="defend">Defend Opposition</option>
+                                    <option value="">Select Package</option>
+                                    <option value="reply">Reply to Opposition Notice - ₹2,249</option>
+                                    <option value="notice">Opposition Notice - ₹2,249</option>
+                                    <option value="notice-reply">Opposition Notice & Reply - ₹4,049</option>
+                                    <option value="reply-hearing">Opposition Reply & Hearing - ₹17,594</option>
+                                    <option value="hearing">Trademark Opposition Hearing - ₹12,915</option>
                                 </select>
                             </div>
                             <button type="submit" class="btn btn-primary btn-block">Submit Enquiry</button>
@@ -451,7 +528,7 @@
                     <div class="sidebar-card">
                         <h3><i class="fas fa-star"></i> Why Choose Us?</h3>
                         <ul class="why-us-list">
-                            <li><i class="fas fa-check-circle"></i> 2,000+ Cases Handled</li>
+                            <li><i class="fas fa-check-circle"></i> 150+ Cases Handled</li>
                             <li><i class="fas fa-check-circle"></i> Expert TM Lawyers</li>
                             <li><i class="fas fa-check-circle"></i> Pan-India Representation</li>
                             <li><i class="fas fa-check-circle"></i> High Success Rate</li>
@@ -499,6 +576,23 @@
                 item.classList.toggle('active');
             });
         });
+
+        // Toggle More Opposition Plans Function
+        function toggleMoreOppositionPlans() {
+            const morePlans = document.getElementById('more_opposition_plans');
+            const viewMoreText = document.querySelector('.view-more-text');
+            const viewLessText = document.querySelector('.view-less-text');
+            
+            if (morePlans.style.display === 'none' || !morePlans.style.display) {
+                morePlans.style.display = 'block';
+                if (viewMoreText) viewMoreText.style.display = 'none';
+                if (viewLessText) viewLessText.style.display = 'inline';
+            } else {
+                morePlans.style.display = 'none';
+                if (viewMoreText) viewMoreText.style.display = 'inline';
+                if (viewLessText) viewLessText.style.display = 'none';
+            }
+        }
     </script>
     <script src="../../script.js"></script>
 </body>

@@ -598,7 +598,7 @@ header {
   margin-top: 2px;
 }
 
-/* Logo Image Styling - MAXIMUM SIZE AND VISIBILITY - WIDE FORMAT OPTIMIZED */
+/* Logo Image Styling - OPTIMIZED SIZE */
 img.logo-img,
 .logo-img,
 .nav-logo img,
@@ -611,8 +611,8 @@ img.logo-img,
 #main-header .nav-logo img,
 .nav-logo svg,
 .logo svg {
-  height: 79px !important;
-  max-height: 79px !important;
+  height: 55px !important;
+  max-height: 55px !important;
   width: auto !important;
   min-width: 0 !important;
   max-width: none !important;
@@ -633,7 +633,7 @@ img.logo-img,
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* Wide format logo (1114x300) - optimized for horizontal display */
-  /* Logo fills navbar height, maintains aspect ratio */
+  /* Logo maintains aspect ratio */
 }
 
 /* SVG specific styling - SVG scales perfectly at any size */
@@ -1609,8 +1609,8 @@ footer {
   
   .nav-logo img,
   .nav-logo .logo-img {
-    height: 66px !important;
-    max-height: 66px !important;
+    height: 45px !important;
+    max-height: 45px !important;
     min-width: 0 !important;
     max-width: none !important;
     width: auto !important;
@@ -1905,8 +1905,8 @@ footer {
   
   .nav-logo img,
   .nav-logo .logo-img {
-    height: 72px !important;
-    max-height: 72px !important;
+    height: 50px !important;
+    max-height: 50px !important;
     min-width: 0 !important;
     max-width: none !important;
     width: auto !important;
