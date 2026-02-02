@@ -438,6 +438,12 @@ header {
   transition: all 0.3s ease;
 }
 
+/* Ensure logo container has proper background */
+.nav-logo,
+.logo {
+  background: transparent !important;
+}
+
 
 #main-header .btn-primary {
     flex-shrink: 0;
@@ -460,16 +466,28 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
+  padding: 0 !important;
   position: relative;
   width: 100%;
-  min-height: 80px;
+  height: 80px !important;
+  min-height: 80px !important;
+  max-height: 80px !important;
+  overflow: visible;
+  box-sizing: border-box;
 }
 
 /* Modern Navigation Layout */
 .nav-logo {
   flex-shrink: 0;
   margin-right: 60px;
+  display: flex !important;
+  align-items: center !important;
+  height: 80px !important;
+  max-height: 80px !important;
+  overflow: visible !important;
+  min-width: auto !important;
+  max-width: none !important;
+  width: auto !important;
 }
 
 .main-nav {
@@ -500,14 +518,22 @@ header {
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 14px;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0 !important;
   text-decoration: none;
   transition: all 0.3s ease;
   position: relative;
   z-index: 2;
-  padding: 8px 0;
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 80px !important;
+  max-height: 80px !important;
+  overflow: visible !important;
+  width: auto !important;
+  min-width: auto !important;
+  max-width: none !important;
+  /* Clickable area matches logo size exactly */
 }
 
 .logo:hover {
@@ -570,6 +596,53 @@ header {
   text-transform: uppercase;
   opacity: 0.85;
   margin-top: 2px;
+}
+
+/* Logo Image Styling - MAXIMUM SIZE AND VISIBILITY - WIDE FORMAT OPTIMIZED */
+img.logo-img,
+.logo-img,
+.nav-logo img,
+.nav-logo .logo-img,
+.nav-logo a img,
+.logo img,
+.logo .logo-img,
+.logo a img,
+#main-header img.logo-img,
+#main-header .nav-logo img,
+.nav-logo svg,
+.logo svg {
+  height: 79px !important;
+  max-height: 79px !important;
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  object-fit: contain !important;
+  object-position: left center !important;
+  background: transparent !important;
+  transition: all 0.3s ease;
+  filter: brightness(1.1) contrast(1.2) saturate(1.2) !important;
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  vertical-align: middle !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: scale(1) !important;
+  image-rendering: -webkit-optimize-contrast !important;
+  image-rendering: crisp-edges !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Wide format logo (1114x300) - optimized for horizontal display */
+  /* Logo fills navbar height, maintains aspect ratio */
+}
+
+/* SVG specific styling - SVG scales perfectly at any size */
+.nav-logo svg,
+.logo svg {
+  fill: currentColor;
+  height: 79px !important;
+  max-height: 79px !important;
+  width: auto !important;
 }
 
 .main-nav ul {
@@ -1529,6 +1602,25 @@ footer {
     order: 1;
     text-align: center;
     margin-right: 0;
+    min-width: auto !important;
+    max-width: none !important;
+    width: auto !important;
+  }
+  
+  .nav-logo img,
+  .nav-logo .logo-img {
+    height: 66px !important;
+    max-height: 66px !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    width: auto !important;
+    filter: brightness(1.3) contrast(1.4) saturate(1.4) !important;
+  }
+  
+  .logo {
+    min-width: auto !important;
+    max-width: none !important;
+    width: auto !important;
   }
 
   .nav-right {
@@ -1804,8 +1896,27 @@ footer {
 
   .nav-logo {
     order: 1;
-    flex: 1;
+    flex: 0 0 auto;
     margin-right: 30px;
+    min-width: auto !important;
+    max-width: none !important;
+    width: auto !important;
+  }
+  
+  .nav-logo img,
+  .nav-logo .logo-img {
+    height: 72px !important;
+    max-height: 72px !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    width: auto !important;
+    filter: brightness(1.3) contrast(1.4) saturate(1.4) !important;
+  }
+  
+  .logo {
+    min-width: auto !important;
+    max-width: none !important;
+    width: auto !important;
   }
 
   .nav-right {
