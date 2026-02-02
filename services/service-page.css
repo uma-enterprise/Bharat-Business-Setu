@@ -273,6 +273,8 @@
     grid-template-columns: 1fr 380px;
     gap: 40px;
     padding: 50px 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Main Content */
@@ -1212,6 +1214,8 @@ div.compliance-hero,
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Check List */
@@ -1302,18 +1306,8 @@ div.compliance-hero,
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-}
-
-.doc-category {
-    background: var(--light-bg);
-    padding: 25px;
-    border-radius: 10px;
-}
-
-.doc-category.special {
-    grid-column: span 2;
-    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-    border-left: 4px solid var(--accent-color);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .doc-category {
@@ -1321,6 +1315,16 @@ div.compliance-hero,
     padding: 25px;
     border-radius: 10px;
     border-left: 3px solid var(--secondary-color);
+    width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.doc-category.special {
+    grid-column: span 2;
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    border-left: 4px solid var(--accent-color);
 }
 
 .doc-category h4 {
@@ -1332,6 +1336,8 @@ div.compliance-hero,
     color: var(--primary-color);
     font-weight: 600;
     letter-spacing: -0.01em;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .doc-category h4 i {
@@ -1347,12 +1353,15 @@ div.compliance-hero,
 
 .doc-category ul li {
     padding: 8px 0;
+    padding-right: 10px;
     color: var(--text-dark);
     font-size: 0.9rem;
     position: relative;
     padding-left: 20px;
     line-height: 1.6;
     font-weight: 500;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .doc-category ul li::before {
@@ -1930,6 +1939,17 @@ div.compliance-hero,
     .sidebar-card.enquiry-form {
         grid-column: span 2;
     }
+
+    /* Fix documents section on tablets */
+    .documents-box,
+    .docs-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+
+    .doc-category.special {
+        grid-column: span 1 !important;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1939,11 +1959,14 @@ div.compliance-hero,
 
     .service-header-text h1 {
         font-size: 1.8rem;
+        line-height: 1.3;
+        word-wrap: break-word;
     }
 
     .service-tagline {
         font-size: 1rem;
         margin-bottom: 20px;
+        word-wrap: break-word;
     }
 
     .service-stats {
@@ -1954,6 +1977,179 @@ div.compliance-hero,
     .stat-item {
         width: 100%;
         padding: 10px 15px;
+        box-sizing: border-box;
+    }
+
+    /* Fix content grid */
+    .content-grid {
+        grid-template-columns: 1fr !important;
+        gap: 25px !important;
+        padding: 30px 15px !important;
+    }
+
+    /* Fix sidebar */
+    .sidebar {
+        position: static !important;
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Fix pricing grid */
+    .pricing-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+
+    /* Fix documents box */
+    .documents-box {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Fix docs grid */
+    .docs-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .doc-category {
+        padding: 20px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+
+    .doc-category.special {
+        grid-column: span 1 !important;
+    }
+
+    .doc-category h4 {
+        font-size: 1rem !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+
+    .doc-category ul {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .doc-category ul li {
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        padding-right: 10px !important;
+    }
+
+    /* Fix benefits grid */
+    .benefits-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+
+    /* Fix compliance warnings */
+    .compliance-warnings {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+
+    /* Fix types grid */
+    .types-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+
+    /* Fix llp suitable for grid */
+    .llp-suitable-for {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+    }
+
+    /* Fix key benefits grid */
+    .key-benefits-grid,
+    .key-benefits-elegant {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+
+    /* Fix compliance grid */
+    .compliance-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+
+    /* Fix penalty grid */
+    .penalty-grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+    }
+
+    /* Fix pricing breakdown */
+    .pricing-breakdown {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+
+    /* Fix requirements timeline */
+    .requirements-timeline {
+        padding-left: 25px !important;
+    }
+
+    .timeline-item {
+        padding-left: 50px !important;
+        margin-bottom: 25px !important;
+    }
+
+    .timeline-marker {
+        left: -25px !important;
+        width: 32px !important;
+        height: 32px !important;
+    }
+
+    /* Fix process timeline */
+    .process-timeline {
+        padding-left: 25px !important;
+    }
+
+    .process-step {
+        padding-left: 35px !important;
+        margin-bottom: 25px !important;
+    }
+
+    .step-number {
+        left: -12px !important;
+        width: 28px !important;
+        height: 28px !important;
+        font-size: 0.85rem !important;
+    }
+
+    /* Fix highlight box */
+    .highlight-box {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Fix requirements box */
+    .requirements-box {
+        padding: 20px !important;
+    }
+
+    /* Fix forms */
+    .form-control {
+        font-size: 16px !important; /* Prevents zoom on iOS */
+    }
+
+    /* Fix contact options */
+    .contact-options {
+        gap: 10px !important;
+    }
+
+    .contact-option {
+        padding: 12px !important;
+        font-size: 0.9rem !important;
     }
 
     .sub-service-nav {
@@ -1988,11 +2184,26 @@ div.compliance-hero,
     .benefits-grid,
     .documents-grid,
     .documents-box {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .docs-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
     
     .doc-category.special {
-        grid-column: span 1;
+        grid-column: span 1 !important;
+    }
+
+    .doc-category {
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
     
     .types-grid {
@@ -2054,6 +2265,116 @@ div.compliance-hero,
 
     .stat-item strong {
         font-size: 1rem;
+    }
+
+    /* Fix stats grid on service pages */
+    .service-stats {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .stat-item {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Fix pricing grid on very small screens */
+    .pricing-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+
+    /* Fix content sections */
+    .content-section {
+        padding: 15px !important;
+    }
+
+    /* Fix documents box */
+    .documents-box {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Fix docs grid */
+    .docs-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .doc-category {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 18px !important;
+    }
+
+    .doc-category.special {
+        grid-column: span 1 !important;
+    }
+
+    /* Fix benefits grid */
+    .benefits-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Fix compliance warnings */
+    .compliance-warnings {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Fix timeline on mobile */
+    .requirements-timeline {
+        padding-left: 15px !important;
+    }
+
+    .timeline-item {
+        padding-left: 30px !important;
+    }
+
+    .timeline-marker {
+        left: -15px !important;
+        width: 25px !important;
+        height: 25px !important;
+    }
+
+    /* Fix process timeline */
+    .process-timeline {
+        padding-left: 20px !important;
+    }
+
+    .process-step {
+        padding-left: 30px !important;
+    }
+
+    .step-number {
+        left: -10px !important;
+        width: 25px !important;
+        height: 25px !important;
+        font-size: 0.8rem !important;
+    }
+
+    /* Fix text overflow */
+    .service-header-text h1 {
+        font-size: 1.5rem !important;
+        line-height: 1.3 !important;
+    }
+
+    .service-tagline {
+        font-size: 0.9rem !important;
+    }
+
+    /* Fix sub-service nav */
+    .sub-service-nav {
+        margin: 15px -10px 0 !important;
+        padding: 0 10px !important;
+    }
+
+    .sub-service-nav a {
+        padding: 8px 12px !important;
+        font-size: 0.8rem !important;
     }
 }
 

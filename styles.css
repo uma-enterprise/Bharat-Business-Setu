@@ -236,6 +236,8 @@ body {
   line-height: 1.6;
   background-color: var(--white);
   overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
 
 /* Hide main content during loading */
@@ -284,6 +286,8 @@ ul {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Button Component */
@@ -999,9 +1003,17 @@ img.logo-img,
 /* Responsive Mega Menu */
 @media (max-width: 900px) {
   .mega-box {
-    width: 100%;
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
     position: static;
     display: none; /* Simplification for mobile for now */
+  }
+
+  .mega-box-wide {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
   }
 }
 
@@ -1493,6 +1505,26 @@ img.logo-img,
   gap: 30px;
 }
 
+/* Mobile fixes for services grid */
+@media (max-width: 768px) {
+  .services-section {
+    padding: 50px 0;
+  }
+
+  .section-title h2 {
+    font-size: 1.8rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .service-card {
+    padding: 20px;
+  }
+}
+
 .service-card {
   background: var(--white);
   padding: 30px;
@@ -1548,6 +1580,34 @@ footer {
   margin-bottom: 40px;
 }
 
+/* Mobile fixes for footer */
+@media (max-width: 768px) {
+  footer {
+    padding: 40px 0 20px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+
+  .footer-col {
+    text-align: center;
+  }
+
+  .app-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .app-btn {
+    width: 100%;
+    max-width: 250px;
+    justify-content: center;
+  }
+}
+
 .footer-col h4 {
   color: var(--white);
   margin-bottom: 20px;
@@ -1587,6 +1647,54 @@ footer {
   .hero .btn {
       display: block;
       margin: 10px auto !important;
+      width: 100%;
+      max-width: 300px;
+  }
+
+  /* Fix stats grid on homepage - stack on mobile */
+  div[style*="grid-template-columns: repeat(3"] {
+      grid-template-columns: 1fr !important;
+      gap: 15px !important;
+  }
+
+  /* Fix mega menu min-width on mobile */
+  .mega-box {
+      min-width: 100% !important;
+      max-width: 100% !important;
+      width: 100% !important;
+  }
+
+  .mega-box-wide {
+      min-width: 100% !important;
+      max-width: 100% !important;
+      width: 100% !important;
+  }
+
+  /* Ensure all images are responsive */
+  img {
+      max-width: 100% !important;
+      height: auto !important;
+  }
+
+  /* Fix container padding on mobile */
+  .container {
+      padding: 0 15px !important;
+  }
+
+  /* Fix text overflow */
+  p, span, div, h1, h2, h3, h4, h5, h6 {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+  }
+
+  /* Fix hero CTA buttons */
+  .hero-cta-buttons {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .btn-primary-modern,
+  .btn-outline-modern {
       width: 100%;
       max-width: 300px;
   }
@@ -1793,6 +1901,17 @@ footer {
     animation: pulse-whatsapp 2s infinite;
 }
 
+/* Mobile fixes for WhatsApp button */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+        font-size: 26px;
+    }
+}
+
 .whatsapp-float:hover {
     transform: scale(1.1);
     background-color: #128c7e;
@@ -1948,6 +2067,24 @@ footer {
 
   .search-container {
       display: none; /* Keep hidden on small tablets for now to avoid crowding */
+  }
+
+  /* Fix mega menu on tablets */
+  .mega-box {
+      min-width: 100% !important;
+      max-width: 100% !important;
+      left: 0 !important;
+      transform: translateX(0) translateY(-8px) !important;
+  }
+
+  .mega-box-wide {
+      min-width: 100% !important;
+      max-width: 100% !important;
+  }
+
+  /* Fix stats grid on tablets */
+  div[style*="grid-template-columns: repeat(3"] {
+      grid-template-columns: repeat(2, 1fr) !important;
   }
 }
 
