@@ -466,6 +466,15 @@ header {
   align-items: center;
 }
 
+/* Hide Login option - will be enabled later */
+.user-links a:first-child {
+  display: none !important;
+}
+
+.user-links a:first-child + span {
+  display: none !important;
+}
+
 .nav-container {
   display: flex;
   justify-content: space-between;
